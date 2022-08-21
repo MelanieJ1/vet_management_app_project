@@ -14,8 +14,9 @@ CREATE TABLE animals (
   name VARCHAR(255),
   date_of_birth VARCHAR(255),
   animal_type VARCHAR(255),
-  client VARCHAR(255)
-  treatment_notes(255)
+  client_name VARCHAR(255),
+  client_email VARCHAR(255),
+  treatment_notes VARCHAR(255),
   vet_id INT NOT NULL REFERENCES vets(id)
 );
 
