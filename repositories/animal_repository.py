@@ -44,19 +44,19 @@ def select(id):
     return animal
 
 
-# def delete_all():
-#     sql = "DELETE  FROM animals"
-#     run_sql(sql)
+def delete_all():
+    sql = "DELETE  FROM animals"
+    run_sql(sql)
 
 
-# def delete(id):
-#     sql = "DELETE  FROM animals WHERE id = %s"
-#     values = [id]
-#     run_sql(sql, values)
+def delete(id):
+    sql = "DELETE  FROM animals WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 
-# def update(animal):
-#     sql = "UPDATE animals SET (name, date_of_birth, type, client_name, client_email, treatment_notes, author_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-#     values = [animal.name, animal.date_of_birth, animal.type, animal. client_name, animal.client_email, animal.treatment_notes, animal.vet.id, animal.id]
-#     print(values)
-#     run_sql(sql, values)
+def update(animal):
+    sql = "UPDATE animals SET (name, date_of_birth, type, client_name, client_email, treatment_notes, author_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [animal.name, animal.date_of_birth, animal.type, animal. client_name, animal.client_email, animal.treatment_notes, animal.vet.id, animal.id]
+    print(values)
+    run_sql(sql, values)
