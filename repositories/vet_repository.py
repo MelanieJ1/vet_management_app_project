@@ -5,11 +5,11 @@ from models.vet import Vet
 from models.animal import Animal
 
 def save(vet):
-    sql = "INSERT INTO vets (first_name, last_name, patient_list) VALUES (%s, %s, %s) RETURNING *"
+    sql = "INSERT INTO vets (first_name, last_name, patient_list) VALUES (%s, %s, %s) RETURNING id"
     values = [vet.first_name, vet.last_name, vet.patient_list]
     results = run_sql(sql, values)
-    id = results[0]['id']
-    vet.id = id
+    vet.id = results[0]['id']
+    print(vet.id)
     return vet
 
 

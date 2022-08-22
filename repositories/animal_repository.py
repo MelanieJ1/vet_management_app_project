@@ -8,7 +8,7 @@ import repositories.vet_repository as vet_repository
 
 
 def save(animal):
-    sql = "INSERT INTO animals (name, date_of_birth, animal_type, client_name, client_email, treatment_notes, vet_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING *"
+    sql = "INSERT INTO animals (name, date_of_birth, animal_type, client_name, client_email, treatment_notes, vet_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id"
     values = [animal.name, animal.date_of_birth, animal.type, animal.client_name, animal.client_email, animal.treatment_notes, animal.vet.id]
     results = run_sql(sql, values)
     id = results[0]['id']
