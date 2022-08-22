@@ -1,6 +1,7 @@
 
 from db.run_sql import run_sql
 
+
 from models.animal import Animal
 from models.vet import Vet
 import repositories.vet_repository as vet_repository
@@ -23,24 +24,24 @@ def select_all():
 
     for row in results:
         vet = vet_repository.select(row['vet_id'])
-        animal = Animal(row['name'], row['date_of_birth'], row['type'], row['client_name'], row['client_email'], row['treatment_notes'], vet, row['id'] )
+        animal = Animal(row['name'], row['date_of_birth'], row['type'], row['client_name'], row['client_email'], row['treatment_notes'], row['id'] )
         animals.append(animal)
-    return books
+    return animals
 
 
 
-# def select(id):
-#     book = None
-#     sql = "SELECT * FROM books WHERE id = %s"
-#     values = [id]
-#     results = run_sql(sql, values)
+def select(id):
+    animal = None
+    sql = "SELECT * FROM animals WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
 
    
-#     if results:
-#         result = results[0]
-#         vet = vet_repository.select(result['vet_id'])
-#         animals = Animal(result['name'], result['date_of_birth'], result['type'], result['client_name'], result['client_email'], result['treatment_notes'], author, result['id'] )
-#     return animal
+    if results:
+        result = results[0]
+        vet = vet_repository.select(result['vet.id'])
+        animals = Animal(result['name'], result['date_of_birth'], result['type'], result['client_name'], result['client_email'], result['treatment_notes'], vet, result['id'] )
+    return animal
 
 
 # def delete_all():

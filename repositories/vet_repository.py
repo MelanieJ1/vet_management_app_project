@@ -25,17 +25,17 @@ def select_all():
     return vets
 
 
-# def select(id):
-#     vet = None
-#     sql = "SELECT * FROM vets WHERE id = %s"
-#     values = [id]
-#     results = run_sql(sql, values)
+def select(id):
+    vet = None
+    sql = "SELECT * FROM vets WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
 
     
-#     if len(results) > 0:
-#         result = results[0]
-#         vet = Vet(result['first_name'], result['last_name'], result['patient_list'], result['id'] )
-#     return vet
+    if results:
+        result = results[0]
+        vet = Vet(result['first_name'], result['last_name'], result['patient_list'], result['id'] )
+    return vet
 
 
 # def delete_all():
@@ -51,6 +51,6 @@ def select_all():
 
 # def update(vet):
 #     sql = "UPDATE vets SET (first_name, last_name) = (%s, %s) WHERE id = %s"
-#     values = [vet.first_name, vet.last_name, vet.id]
+#     values = [vet.first_name, vet.last_name, vet.patient_list, vet.id]
 #     run_sql(sql, values)
 
