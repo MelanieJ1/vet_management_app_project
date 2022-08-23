@@ -22,8 +22,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        # vet = vet_repository.select(row['vet_id'])
-        animal = Animal(row['name'], row['date_of_birth'], row['type'], row['client_name'], row['client_email'], row['treatment_notes'], row['id'] )
+        vet = vet_repository.select(row['vet_id'])
+        animal = Animal(row['name'], row['date_of_birth'], row['animal_type'], row['client_name'], row['client_email'], row['treatment_notes'], vet, row['id'] )
         animals.append(animal)
     return animals
 
@@ -39,7 +39,7 @@ def select(id):
     if results:
         result = results[0]
         vet = vet_repository.select(result['vet.id'])
-        animals = Animal(result['name'], result['date_of_birth'], result['type'], result['client_name'], result['client_email'], result['treatment_notes'], vet, result['id'] )
+        animals = Animal(result['name'], result['date_of_birth'], result['animal_type'], result['client_name'], result['client_email'], result['treatment_notes'], vet, result['id'] )
     return animal
 
 
@@ -55,7 +55,7 @@ def delete(id):
 
 
 def update(animal):
-    sql = "UPDATE animals SET (name, date_of_birth, type, client_name, client_email, treatment_notes, author_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE animals SET (name, date_of_birth, animal_type, client_name, client_email, treatment_notes, author_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [animal.name, animal.date_of_birth, animal.type, animal. client_name, animal.client_email, animal.treatment_notes, animal.vet.id, animal.id]
     print(values)
     run_sql(sql, values)

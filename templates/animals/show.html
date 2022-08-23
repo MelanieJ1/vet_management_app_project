@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% for animal in animals %}
+<table>
+    <tr>
+        <td>{{animal.name}}</td>
+        <td>{{animal.vet.first_name}}</td>
+        <br>
+    </tr>
+</table>
+{% endfor %}
+{% endblock %}
+
+
