@@ -15,9 +15,9 @@ for animal in result:
 # vet_repository.delete_all()
 
 
-vet_1 = Vet('James', 'Anderson', 'Bella and Mario')
+vet_1 = Vet('James', 'Anderson')
 vet_repository.save(vet_1)
-vet_2 = Vet("Sarah", "Miller", "Max and Daisy")
+vet_2 = Vet("Sarah", "Miller")
 vet_repository.save(vet_2)
 
 # vet_repository.delete(vet_2.id)
