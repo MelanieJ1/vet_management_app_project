@@ -18,5 +18,6 @@ CREATE TABLE animals (
   client_email VARCHAR(255),
   treatment_notes VARCHAR(255),
   vet_id INT NOT NULL REFERENCES vets(id)
+  ON DELETE CASCADE
 );
 

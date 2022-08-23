@@ -9,10 +9,14 @@ import repositories.vet_repository as vet_repository
 animal_repository.delete_all()
 vet_repository.delete_all()
 
+
 vet_1 = Vet('James', 'Anderson', 'Bella and Mario')
 vet_repository.save(vet_1)
 vet_2 = Vet("Sarah", "Miller", "Max and Daisy")
 vet_repository.save(vet_2)
+
+vet_repository.delete(vet_2.id)
+
 
 vet_repository.select_all()
 
@@ -29,6 +33,8 @@ animal_repository.save(animal_3)
 
 animal_4 = Animal("Daisy", "9/9/2020", "Rabbit", "John Williams", "j.williams@net.com", "Nail clipping required", vet_2)
 animal_repository.save(animal_4)
+
+# animal_repository.delete(animal_1.id)
 
 pdb.set_trace()
 

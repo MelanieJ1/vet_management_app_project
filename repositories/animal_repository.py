@@ -10,9 +10,8 @@ import repositories.vet_repository as vet_repository
 def save(animal):
     sql = "INSERT INTO animals (name, date_of_birth, animal_type, client_name, client_email, treatment_notes, vet_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id"
     values = [animal.name, animal.date_of_birth, animal.type, animal.client_name, animal.client_email, animal.treatment_notes, animal.vet.id]
-    results = run_sql(sql, values)
-    id = results[0]['id']
-    animal.id = id
+    results = run_sql(sql, values)[0]
+    animal.id = results[0]
     return animal
 
 
@@ -23,7 +22,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        vet = vet_repository.select(row['vet_id'])
+        # vet = vet_repository.select(row['vet_id'])
         animal = Animal(row['name'], row['date_of_birth'], row['type'], row['client_name'], row['client_email'], row['treatment_notes'], row['id'] )
         animals.append(animal)
     return animals
