@@ -6,8 +6,13 @@ from models.vet import Vet
 import repositories.animal_repository as animal_repository
 import repositories.vet_repository as vet_repository
 
-animal_repository.delete_all()
-vet_repository.delete_all()
+result = animal_repository.select_all()  # ADDED
+
+for animal in result:
+    print(animal.__dict__)
+
+# animal_repository.delete_all()
+# vet_repository.delete_all()
 
 
 vet_1 = Vet('James', 'Anderson', 'Bella and Mario')
@@ -15,10 +20,10 @@ vet_repository.save(vet_1)
 vet_2 = Vet("Sarah", "Miller", "Max and Daisy")
 vet_repository.save(vet_2)
 
-vet_repository.delete(vet_2.id)
+# vet_repository.delete(vet_2.id)
 
 
-vet_repository.select_all()
+# vet_repository.select_all()
 
 
 

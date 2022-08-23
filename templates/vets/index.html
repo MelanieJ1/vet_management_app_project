@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+</body>
+    <h1>Add new vet</h1>
+
+    <form class="form-inline" action="/vets" method="post">
+      <label for="first_name">First Name</label>
+      <input type="text" name="first_name" id="first_name">
+      <label for="last_name">Last Name</label>
+      <input type="text" name="last_name" id="lastName">
+      <label for="patient_list">Patient List</label>
+      <input type="text" name="patient_list" id="patient_list">
+      <input type="submit" value="Add Vet">
+    
+    </form> 
+    <div class="vet-container">
+    {% for vet in vets %}
+    <div class="vet">
+      <h2>{{ animal.name }}</h2>
+      <h3>{{ animal.date_of_birth }}</h3>
+
+          <form class="form-inline" action="/animals/delete/{{ animal.name }}" method="POST">
+            <input type="submit" value="Delete">
+          </form>
+    </div>
+    {% endfor %}
+  
+{% endblock %}
