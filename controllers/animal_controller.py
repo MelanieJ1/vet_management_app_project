@@ -11,7 +11,10 @@ animals_blueprint = Blueprint("animals", __name__)
 
 @animals_blueprint.route("/add_animal", )
 def add_animal():
-    return render_template("/animals/index.html")
+    vets = vet_repository.select_all()
+    return render_template("/animals/index.html", vets = vets)
+
+
 
 @animals_blueprint.route("/animals")
 def show_animal():
