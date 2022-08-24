@@ -5,8 +5,7 @@ DROP TABLE IF EXISTS vets;
 CREATE TABLE vets (
   id SERIAL PRIMARY KEY,
   first_name VARCHAR(255),
-  last_name VARCHAR(255),
-  patient_list VARCHAR(255)
+  last_name VARCHAR(255)
 );
 
 CREATE TABLE animals (

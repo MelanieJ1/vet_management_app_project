@@ -10,25 +10,32 @@
       <label for="name">Name</label>
       <input type="text" name="name" id="name">
       <label for="date">Date of Birth</label>
-      <input type="text" name="date_of_birth" id="date">
+      <input type="text" name="date_of_birth" id="date_of_birth">
       <label for="animal_type">Type</label>
       <input type="text" name="animal_type" id="animal_type">
       <label for="client_name">Client Name</label>
-      <input type="text" name="client_name" id="clientName">
+      <input type="text" name="client_name" id="client_name">
       <label for="client_email">Client Email</label>
-      <input type="text" name="client_email" id="clientEmail">
+      <input type="text" name="client_email" id="client_email">
       <label for="treatment_notes">Treatment Notes</label>
-      <input type="text" name="treatment_notes" id="treatmentNotes">
+      <input type="text" name="treatment_notes" id="treatment_notes">
+
+      <label for="vet">vet:</label>
+        <select id="vet_id" name="vet_id">
+            {% for vet in vets %}
+            <option value="{{ vet.id }}">{{ vet.first_name }}</option>
+            {% endfor %}
+        </select>
 
      
       <input type="submit" value="Add animal">
     
     </form> 
-    <div class="animal-container">
+    <!-- <div class="animal-container">
     {% for animal in animals %}
     <div class="animal">
       <h2>{{ animal.name }}</h2>
-      <h3>{{ animal.date_of_birth }}</h3>
+      <h3>{{ animal.date_of_birth }}</h3> -->
       
 
           
