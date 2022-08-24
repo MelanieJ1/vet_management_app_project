@@ -6,7 +6,7 @@
 </body>
     <h1>Add Animal</h1>
 
-    <form action="/animals" method="post">
+    <form action="/add_animal" method="post">
       <div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="name" required autofocus>
@@ -37,15 +37,6 @@
         <input type="text" id="treatment_notes" name="treatment_notes" placeholder="treatment_notes" required>
       </div>
 
-    
-      <!-- <div>
-        <label for="active">Active:</label>
-        <select id="active" name="active">
-          <option value="true">True</option>
-          <option value="false">False</option>
-        </select>
-      </div>
-     -->
       <div>
         <label for="vet">Vet:</label>
         <select id="vet_id" name="vet_id">
@@ -62,20 +53,7 @@
 
     
     
-    
-    <!-- <div class="animal-container">
-    {% for animal in animals %}
-    <div class="animal">
-      <h2>{{ animal.name }}</h2>
-      <h3>{{ animal.date_of_birth }}</h3> -->
-      
 
-          
-
-    <!-- <form class="form-inline" action="/animals/delete/{{ animal.name }}" method="POST">
-            <input type="submit" value="Delete">
-    </form> -->
-    <!-- </div> -->
-    {% endfor %}
+   
   
 {% endblock %}

@@ -14,19 +14,21 @@ def show_vet():
     return render_template("vets/show.html", vets = vets)
 
 
-@vets_blueprint.route("/add_vet")
+@vets_blueprint.route("/add_vet", methods = ['GET'])
 def add_vet():
     vets = vet_repository.select_all()
     return render_template("/vets/new.html", vets = vets)
 
 
-@vets_blueprint.route("/add_vet", methods=['POST'])
+
+@vets_blueprint.route("/vets", methods=['POST'])
 def create_vet():
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     vet = Vet(first_name, last_name)
     vet_repository.save(vet)
     return redirect('/vets')
+
 
 
 
