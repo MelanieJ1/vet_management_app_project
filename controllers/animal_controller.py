@@ -55,3 +55,18 @@ def delete_animal():
 def remove_animal(id):
     animal_repository.delete(id)
     return redirect('/animals')
+
+
+@animals_blueprint.route("/animals/<id>", methods=['POST'])
+def update_animal(id):
+    name = request.form['name']
+    date_of_birth = request.form['date_of_birth']
+    animal_type = request.form['animal_type']
+    client_name = request.form['client_name']
+    client_email = request.form['client_email']
+    treatment_notes = request.form['treatment_notes']
+    vet_id = request.form['vet_id']
+    vet = vet_repository.select(vet_id)
+    animal = Animal(name, date_of_birth, animal_type, client_name, client_email, treatment_notes, vet, id)
+    animal_repository.update(animal)
+    return redirect('/animals')
