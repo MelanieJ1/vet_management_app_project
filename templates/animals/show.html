@@ -9,6 +9,15 @@
         <br>
     </tr>
 </table>
+
+<div class="buttons">
+
+    <form class="delete-form" action="/animals/{{animal.id}}/delete" method="POST"> <!-- NEW -->
+        <button type="submit">Delete Animal</button>
+    </form> <!-- NEW -->
+    
+  
+  </div>
 {% endfor %}
 {% endblock %}
 

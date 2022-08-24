@@ -13,9 +13,22 @@ def show_vet():
     vets = vet_repository.select_all()
     return render_template("vets/show.html", vets = vets)
 
-@vets_blueprint.route("/add_vet", )
+
+@vets_blueprint.route("/add_vet")
 def add_vet():
-    return render_template("/vets/index.html")
+    vets = vet_repository.select_all()
+    return render_template("/vets/new.html", vets = vets)
+
+
+@vets_blueprint.route("/add_vet", methods=['POST'])
+def create_vet():
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    vet = Vet(first_name, last_name)
+    vet_repository.save(vet)
+    return redirect('/vets')
+
+
 
 # @vets_blueprint.route("/vets")
 # def show(id):
@@ -29,4 +42,14 @@ def vets():
     return render_template("vets/index.html")
 
 
-vets = vet_repository.select_all()          
+vets = vet_repository.select_all()    
+
+@vets_blueprint.route("/delete_vet")
+def delete_vet():
+    vets = vet_repository.select_all()
+    return render_template("/vets/index.html", vets = vets)
+
+@vets_blueprint.route("/vets/<id>/delete", methods=['POST'])
+def remove_vet(id):
+    vet_repository.delete(id)
+    return redirect('/vets')
