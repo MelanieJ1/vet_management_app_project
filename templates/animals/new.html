@@ -4,7 +4,7 @@
 {% block content %}
 
 </body>
-    <h1>Add Animal</h1>
+    <h2>Add Animal</h2>
 
     <form action="/add_animal" method="post">
       <div>
@@ -14,34 +14,34 @@
     
       <div>
         <label for="date_of_birth">Date of Birth:</label>
-        <input type="text" id="date_of_birth" name="date_of_birth" placeholder="date_of_birth" required>
+        <input type="text" id="date_of_birth" name="date_of_birth" placeholder="date of birth" required>
       </div>
 
       <div>
         <label for="animal_type">Animal Type:</label>
-        <input type="text" id="animal_type" name="animal_type" placeholder="animal_type" required>
+        <input type="text" id="animal_type" name="animal_type" placeholder="animal type" required>
       </div>
 
       <div>
         <label for="client_name">Client Name:</label>
-        <input type="text" id="client_name" name="client_name" placeholder="client_name" required>
+        <input type="text" id="client_name" name="client_name" placeholder="client name" required>
       </div>
 
       <div>
         <label for="client_email">Client Email:</label>
-        <input type="text" id="client_email" name="client_email" placeholder="client_email" required>
+        <input type="text" id="client_email" name="client_email" placeholder="client email" required>
       </div>
 
       <div>
         <label for="treatment_notes">Treatment Notes:</label>
-        <input type="text" id="treatment_notes" name="treatment_notes" placeholder="treatment_notes" required>
+        <input type="text" id="treatment_notes" name="treatment_notes" placeholder="treatment notes" required>
       </div>
 
       <div>
         <label for="vet">Vet:</label>
         <select id="vet_id" name="vet_id">
           {% for vet in vets %}
-            <option value="{{ vet.id }}">{{ vet.first_name }}{{vet.last_name}}</option>
+            <option value="{{ vet.id }}">{{ vet.first_name }} {{vet.last_name}}</option>
           {% endfor %}
   
         </select>
@@ -52,8 +52,6 @@
     </form>
 
     
-    
-
-   
+  
   
 {% endblock %}

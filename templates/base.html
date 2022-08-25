@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <style>
+        body  {
+           background-image: url(/static/dogs_1.png);
+           
+        }
+     </style> -->
     <title>Vet Management App</title>
 </head>
 <body>
@@ -26,6 +33,14 @@
             <li> 
                 <a href="/add_animal">Add Animal</a>
             </li>
+            <li> 
+                <a href="/update_animal">Update Animal</a>
+            </li>
+            <li> 
+                <a href="/vets/<id>/edit">Update Vet</a>
+            </li>
+
+
           
             </ul>
         </ul>                      

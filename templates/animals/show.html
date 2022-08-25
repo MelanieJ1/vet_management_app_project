@@ -1,14 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 {% for animal in animals %}
-<table>
+<!-- <table>
     <tr>
         <td>{{animal.name}}</td>
         <td>{{animal.vet.first_name}}</td>
         <td>{{animal.vet.last_name}}</td>
         <br>
     </tr>
-</table>
+</table> -->
+
+<h2>Patient</h2>
+<li>Name: {{animal.name}}</li>
+<li>Date of Birth: {{animal.date_of_birth}}</li>
+<li>Animal Type: {{animal.animal_type}}</li>
+<li>Client Name: {{animal.client_name}}</li>
+<li>Client Email: {{animal.client_email}}</li>
+<li>Treatment Notes: {{animal.treatment_notes}}</li>
+<li>Vet: {{animal.vet.first_name}} {{animal.vet.last_name}}</li>
+
 
 <div class="buttons">
 
@@ -17,7 +27,9 @@
     </form> <!-- NEW -->
     
   
-  </div>
+</div>
+
+<br>
 {% endfor %}
 {% endblock %}
 

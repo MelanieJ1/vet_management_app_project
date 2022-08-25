@@ -57,7 +57,12 @@ def remove_animal(id):
     return redirect('/animals')
 
 
-@animals_blueprint.route("/animals/<id>", methods=['POST'])
+@animals_blueprint.route("/update_animal", methods=['GET'] )
+def update_the_animal():
+    animals = animal_repository.select_all()
+    return render_template("/animals/edit.html", animal = animals)
+
+@animals_blueprint.route("/update_animal/<id>", methods=['PUT'])
 def update_animal(id):
     name = request.form['name']
     date_of_birth = request.form['date_of_birth']

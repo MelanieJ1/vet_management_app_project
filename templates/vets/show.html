@@ -2,13 +2,10 @@
 {% extends "base.html" %}
 {% block content %}
 {% for vet in vets %}
-<table>
-    <tr>
-        <td>{{vet.first_name}}</td>
-        <td>{{vet.last_name}}</td>
-        <br>
-    </tr>
-</table>
+
+<h2>Vet</h2>
+<li>{{vet.first_name}} {{vet.last_name}}</li>
+    
 
 <div class="buttons">
 

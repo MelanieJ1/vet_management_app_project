@@ -1,0 +1,101 @@
+
+
+
+ body {
+    background-color:  #76d7c4 ;
+    background-image: url(/static/dogs_1.png);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size:72%;
+
+  }
+  
+  .navLink li {
+      margin: 20px;
+  }
+  
+   a {
+    color: rgb(39, 33, 209);
+  }
+  
+  .navLink {
+      display: inline;
+      background-color: #0e2cd8;
+  }
+  
+  .form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  } */
+  
+  
+  .form-inline label {
+    margin: 5px 10px 5px 10px;
+  }  */ */
+  
+ 
+  .form-inline text input[type=text]  {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  } 
+   */
+  
+  
+  .form-inline input[type=submit] {
+    padding: 10px 20px;
+    background-color: #171A21;
+    border: 1px solid #ddd;
+    color: #aed6f1; 
+    border-radius: 50%;
+     
+  } 
+  
+   .form-inline input[type=submit]:hover {
+    background-color:   #21618c
+    ;
+  } 
+
+  .form-inline button [type=submit] {
+    padding: 10px 20px;
+    background-color: #171A21;
+    border: 1px solid #ddd;
+    color: #aed6f1; 
+    border-radius: 50%;
+  }
+
+  
+  .event-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .event {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    background-color: #617073;
+    padding: 10px;
+    margin:20px;
+  }
+  
+  .event p, i{
+    color: white;
+    list-style: none;
+    margin:3px;
+  }
+
+  h1 {
+     text-align: left center;
+     font-style: normal;
+    
+  }
+  
+  h2 {
+    color: #512e5f;
+    font-style: italic;
+  }

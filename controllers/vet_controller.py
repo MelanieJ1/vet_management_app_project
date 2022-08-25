@@ -55,3 +55,35 @@ def delete_vet():
 def remove_vet(id):
     vet_repository.delete(id)
     return redirect('/vets')
+
+@vets_blueprint.route("/vets/<id>/edit", methods=['GET'])
+def edit_vet(id):
+    animal = animal_repository.select(id)
+    vets = vet_repository.select_all()
+    return render_template('vets/edit.html', animal = animal, vet = vets)
+
+# @vets_blueprint.route("/update_vet", methods = ['GET'])
+# def update_the_vet():
+#     vets = vet_repository.select_all()
+#     return render_template("/vets/edit.html", vet = vets)
+
+@vets_blueprint.route("/vets/<id>", methods=['POST'])
+def update_vet():
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    vet = vet_repository.select(id)
+    vet = Vet(first_name, last_name, id)
+    # animal = Animal
+    vet_repository.update(vet)
+    return redirect('/vets')
+
+# @tasks_blueprint.route("/tasks/<id>", methods=['POST'])
+# def update_task(id):
+#     description = request.form['description']
+#     user_id     = request.form['user_id']
+#     duration    = request.form['duration']
+#     completed   = request.form['completed']
+#     user        = user_repository.select(user_id)
+#     task        = Task(description, user, duration, completed, id)
+#     task_repository.update(task)
+#     return redirect('/tasks')
